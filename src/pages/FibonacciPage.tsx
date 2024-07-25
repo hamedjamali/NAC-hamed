@@ -17,7 +17,6 @@ const Title = styled.h2`
 
 const Input = styled.input`
   padding: 12px;
-  font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 4px;
   width: 500px;
@@ -70,7 +69,7 @@ const Result = styled.div`
   border-radius: 4px;
   width: 100px;
   height: 90px;
-  font-size: 18px;
+  font-size: 70px;
   background-color: #f1f1f1;
   display: flex;
   align-items: center;
@@ -90,7 +89,7 @@ const Line = styled.div`
 
 const FibonacciPage: FC = () => {
   const [number, setNumber] = useState<number | string>("");
-  const [result, setResult] = useState<[number, number] | null>(null);
+  const [result, setResult] = useState<[number | string, number | string] | null>(['-', '-']);
 
   const getFibonacci = (num: number): [number, number] => {
     let prevFib = 0,
@@ -122,15 +121,14 @@ const FibonacciPage: FC = () => {
         <Button onClick={handleSubmit}>Submit</Button>
       </Box>
       <Line></Line>
-      {result && (
         <>
           <Label>Inter your number</Label>
           <ResultBox>
-            <Result>{result[0]}</Result>
-            <Result>{result[1]}</Result>
+            <Result>{result![0]}</Result>
+            <Result>{result![1]}</Result>
           </ResultBox>
         </>
-      )}
+    
     </PageWrapper>
   );
 };

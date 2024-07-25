@@ -1,5 +1,5 @@
-import React, { FC, useState } from 'react';
-import styled from '@emotion/styled';
+import React, { FC, useState } from "react";
+import styled from "@emotion/styled";
 
 const PageWrapper = styled.div`
   display: flex;
@@ -68,9 +68,9 @@ const Result = styled.div`
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  font-size: 70px;
   width: 100%;
   height: 90px;
-  font-size: 18px;
   background-color: #f1f1f1;
   display: flex;
   align-items: center;
@@ -78,7 +78,7 @@ const Result = styled.div`
 `;
 const Label = styled.label`
   text-align: left;
-      width: 522px;
+  width: 522px;
 `;
 
 const Line = styled.div`
@@ -89,8 +89,8 @@ const Line = styled.div`
 `;
 
 const CollatzPage: FC = () => {
-  const [number, setNumber] = useState<number | string>('');
-  const [loops, setLoops] = useState<number | null>(null);
+  const [number, setNumber] = useState<number | string>("");
+  const [loops, setLoops] = useState<number | string | null>("-");
 
   const getCollatzLoops = (num: number): number => {
     let count = 0;
@@ -106,7 +106,7 @@ const CollatzPage: FC = () => {
   };
 
   const handleSubmit = () => {
-    if (typeof number === 'number') {
+    if (typeof number === "number") {
       const res = getCollatzLoops(number);
       setLoops(res);
     }
@@ -131,27 +131,27 @@ const CollatzPage: FC = () => {
     //   )}
     // </PageWrapper>
     <PageWrapper>
-    <Title>Collatz Conjecture</Title>
-    <Label>Inter your number</Label>
-    <Input
-      type="number"
-      value={number}
-      onChange={(e) => setNumber(parseInt(e.target.value))}
-      placeholder=""
-    />
-    <Box>
-      <Button onClick={handleSubmit}>Submit</Button>
-    </Box>
-    <Line></Line>
-    {loops !== null && (
+      <Title>Collatz Conjecture</Title>
+      <Label>Inter your number</Label>
+      <Input
+        type="number"
+        value={number}
+        onChange={(e) => setNumber(parseInt(e.target.value))}
+        placeholder=""
+      />
+      <Box>
+        <Button onClick={handleSubmit}>Submit</Button>
+      </Box>
+      <Line></Line>
+      {/* {loops !== null && ( */}
       <>
         <Label>Inter your number</Label>
         <ResultBox>
           <Result>{loops}</Result>
         </ResultBox>
       </>
-    )}
-  </PageWrapper>
+      {/* )} */}
+    </PageWrapper>
   );
 };
 

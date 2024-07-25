@@ -146,7 +146,6 @@ const EditPage: FC = () => {
     register,
     handleSubmit,
     formState: { errors },
-    reset,
     setValue,
     formState,
   } = useForm({
@@ -166,7 +165,7 @@ const EditPage: FC = () => {
 
   const onSubmit = (data: any) => {
     updateUser({ ...data, id: user!.id });
-    navigate("/");
+    navigate("/home");
   };
 
   if (!user) {
@@ -180,7 +179,6 @@ const EditPage: FC = () => {
           <Title>
             Edit <TitleLight> Item</TitleLight>
           </Title>
-
           <FormBox>
             <Field>
               <Label>Name</Label>

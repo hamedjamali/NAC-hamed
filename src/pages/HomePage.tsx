@@ -1,7 +1,6 @@
 import React, { FC, useState } from 'react';
 import { useUserStore } from '../store/userStore';
 import UserList from '../components/UserList';
-import UserForm from '../components/UserForm';
 import Pagination from '../components/Pagination';
 
 const HomePage: FC = () => {

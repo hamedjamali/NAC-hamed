@@ -7,7 +7,7 @@ import { Add } from "./svg/Svg";
 const Table = styled.table`
   width: 100%;
   border-collapse: collapse;
-  margin: 4px 0;
+  // margin: 4px 0;
 `;
 
 const Th = styled.th`
@@ -40,6 +40,9 @@ const Header = styled.div`
   display: flex;
     justify-content: space-between;
     padding: 4px 12px;
+    border: 1px solid #c1c1c1;
+    border-radius: 8px 8px 0 0;
+    align-items: center;
 `;
 
 const Badge = styled.span<{ status: "active" | "not_active" | null }>`

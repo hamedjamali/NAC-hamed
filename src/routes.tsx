@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import HomePage from './pages/HomePage';
 import FibonacciPage from './pages/FibonacciPage';
 import CollatzPage from './pages/CollatzPage';
@@ -14,6 +14,10 @@ const AppRoutes = () => (
       <Route path="/home" element={<HomePage />} />
       <Route path="/home/add" element={<AddItem />} />
       <Route path="/edit/:id" element={<EditPage />} />
+      <Route
+        path="/"
+        element={<Navigate to="/home" replace />}
+    />
       <Route path="/fibonacci" element={<FibonacciPage />} />
       <Route path="/collatz" element={<CollatzPage />} />
       </Route>
